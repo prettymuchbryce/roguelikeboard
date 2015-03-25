@@ -8,6 +8,11 @@
     "email": "brycedneal@gmail.com",
     "url": "http://bryce.is"
   },
+  "keywords": [
+    "roguelike",
+    "game development",
+    "ascii"
+  ],
   "license": "MIT",
   "homepage": "http://www.bryce.is/building/roguelikeboard",
   "dependencies": {

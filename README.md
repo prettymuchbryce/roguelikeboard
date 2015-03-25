@@ -1,6 +1,8 @@
-roguelikeboard.jsx
+[<img src="prettymuchbryce.s3.amazonaws.com/roguelikeboardlogo.png">](http://bryce.is/building/roguelikeboard)
 
 >roguelikeboard.jsx is a simple react.js component for rendering ASCII inspired roguelike boards on the web
+
+[Click here for a demonstration](http://bryce.is/building/roguelikeboard)
 
 ####Installation
 First grab the source via `npm install roguelikeboard`, or download the project from github and snag `src/roguelikeboard.jsx`
