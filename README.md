@@ -1,8 +1,9 @@
 [<img src="http://prettymuchbryce.s3.amazonaws.com/rlblogo.png">](http://bryce.is/building/roguelikeboard)
 
->roguelikeboard.jsx is a simple react.js component for rendering ASCII inspired roguelike boards on the web
-
 [Click here for a demonstration](http://bryce.is/building/roguelikeboard)
+
+####Summary
+roguelikeboard.jsx is a simple react.js component for rendering ASCII inspired roguelike boards on the web. A roguelike is a style of computer game usually characterized by procedural generation, permanent death, and ASCII graphics. If you want to learn more about roguelikes, visit [wikipedia](http://en.wikipedia.org/wiki/Roguelike).
 
 ####Installation
 First grab the source via `npm install roguelikeboard`, or download the project from github and snag `src/roguelikeboard.jsx`
@@ -18,11 +19,11 @@ React.createClass({
                 return (
                     <RoguelikeBoard ref="roguelikeboard" />
                 )
-            }
+        }
 })
 ```
 ###API
-There are a few different operations you can perform. Here they all are.
+There are a few different operations you can perform on the board. Each will trigger a re-render (for now).
 ```
 roguelikeboard.setViewportSize(widthInTiles, heightInTiles) [required]
 roguelikeboard.setTileMap(2dArrayOfKeys) [required]
@@ -41,6 +42,7 @@ var map = [[0,0,0],
            [0,1,0],
            [0,0,0]];
 ```
+
 Objects are the players, items, monsters, in your game. It is assumed to be an array with objects that contain a `x` `y` and `type` properties.
 ```
 var objects = [{x: 0, y: 0, type: 'player'}];
