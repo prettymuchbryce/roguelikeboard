@@ -8,6 +8,7 @@ var rename = require('gulp-rename');
 var rimraf = require('gulp-rimraf');
 var mkdirp = require('mkdirp');
 var exec = require('child_process').exec;
+var react = require('gulp-react');
 
 var scripts = [
     './demo/static/js/browserify-scripts.js'
@@ -56,6 +57,13 @@ gulp.task('browserify', ['clean'], function(cb) {
         console.log(stderr);
         cb(error);
     });
+});
+
+gulp.task('npm-build', function () {
+    return gulp.src('./src/roguelikeboard.jsx')
+        .pipe(react())
+        .pipe(concat('index.js'))
+        .pipe(gulp.dest('.'));
 });
 
 gulp.task('clean', ['delete-static', 'create-static']);

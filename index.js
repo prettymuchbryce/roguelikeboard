@@ -99,26 +99,26 @@ function initialize() {
                         var classes = 'rb-symbol';
                         classes += ' ' + className;
                         var key = x + "_" + y;
-                        mapElement = (<span key={key} className={classes}></span>);
+                        mapElement = (React.createElement("span", {key: key, className: classes}));
                         mapElements.push(mapElement);
                     } else {
                         var className = this.state.tileClassMap[map[y][x]];
                         var classes = 'rb-symbol';
                         classes += ' ' + className;
                         var key = x + "_" + y;
-                        mapElement = (<span key={key} className={classes}></span>);
+                        mapElement = (React.createElement("span", {key: key, className: classes}));
                         mapElements.push(mapElement);
                     }
                 }
                 var key = y + "_br";
-                mapElements.push(<br key={key} />)
+                mapElements.push(React.createElement("br", {key: key}))
             }
             return (
-                <div className="rb-renderer-container">
-                    <div className="rb-renderer">
-                        {mapElements}
-                    </div>
-                </div>
+                React.createElement("div", {className: "rb-renderer-container"}, 
+                    React.createElement("div", {className: "rb-renderer"}, 
+                        mapElements
+                    )
+                )
             )
         }
     });
