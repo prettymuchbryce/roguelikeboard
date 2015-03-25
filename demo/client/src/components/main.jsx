@@ -1,9 +1,7 @@
 var React = require('react');
-var AsciiRenderer = require('../../../../src/roguelike-board.jsx');
+var AsciiRenderer = require('../../../../src/roguelikeboard.jsx');
 var _ = require('lodash');
 var $ = require('jquery');
-var markdown = require( "markdown" ).markdown;
-
 
 var Main = React.createClass({
     componentDidMount: function() {
