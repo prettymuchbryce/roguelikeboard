@@ -21,23 +21,25 @@ React.createClass({
 ```
 ###API
 There are a few different operations you can perform. Here they all are.
-- roguelikeboard.setViewportSize(widthInTiles, heightInTiles) `[required]`
-- roguelikeboard.setTileMap(2dArrayOfKeys) `[required]`
-- roguelikeboard.setCSSClassForTile(key, cssClassName)
-- roguelikeboard.setCSSClassForObject(key, cassClassName)
-- roguelikeboard.setObjects(array)
-- roguelikeboard.setCameraPosition(x, y)
+```
+roguelikeboard.setViewportSize(widthInTiles, heightInTiles) [required]
+roguelikeboard.setTileMap(2dArrayOfKeys) [required]
+roguelikeboard.setCSSClassForTile(key, cssClassName)
+roguelikeboard.setCSSClassForObject(key, cassClassName)
+roguelikeboard.setObjects(array)
+roguelikeboard.setCameraPosition(x, y)
+```
 
 Before jumping into details, there are a couple of concepts to explain.
 
 ####TileMaps vs Objects
-The tile map is the "level" of your board. It is the background. It is assumed to be a 2D array, e.g.
+The tilemap is the "level" of your board. It is the background. It is assumed to be a 2D array, e.g.
 ```
 var map = [[0,0,0],
            [0,1,0],
            [0,0,0]];
 ```
-Objects are the players, items, monsters, in your game. It is assumed to be an array with objects that contain an `x` `y` and `type` property.
+Objects are the players, items, monsters, in your game. It is assumed to be an array with objects that contain a `x` `y` and `type` properties.
 ```
 var objects = [{x: 0, y: 0, type: 'player'}];
 ```
@@ -65,7 +67,7 @@ Now we simply create some CSS to style these items.
 }
 ```
 
-You can also style `.rb-renderer` with styles that should affect the entire board such as a font. Speaking of font, make sure you use a fixed-width font, or things will get pretty ugly. I've used `Courier New` in the example as it is a common fixed-width font included on most machines.
+You can also style `.rb-renderer` with styles that should affect the entire board such as a font. Speaking of font, make sure you use a fixed-width font, or things will get pretty ugly. I've used `Courier New` in the example as it is a common fixed-width font included in popular operating systems.
 
 ####Running the demo
 ```
