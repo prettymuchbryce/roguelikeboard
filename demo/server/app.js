@@ -3,7 +3,7 @@ var bodyParser = require('body-parser')
 var router = require('./router.js');
 var app = express();
 
-app.use(express.static('./static'));
+app.use('/building/roguelikeboard', express.static('./static'));
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/templates/');
 
