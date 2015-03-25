@@ -86,13 +86,12 @@ var Main = React.createClass({
                                 </div>
                                 <div className="body">
                                     roguelikeboard.jsx is a simple react.js component for rendering ASCII inspired <a href = "http://en.wikipedia.org/wiki/Roguelike">roguelike</a> boards on the web. 
-                                    I made for fun, and to hopefully use it someday for a future project.
                                     <br/><br/>
-                                    One interesting side effect of using the DOM over Canvas, or WebGL is that you get all of the benefits of CSS when rendering your board.
+                                    roguelikeboard uses HTML/CSS, rather than WebGL or Canvas to render the game board. One interesting side effect being that you get all of the benefits of CSS when rendering your board.
                                     <br/><br/>
-                                    This means that the demo you see above is rendered completely using CSS. Even the symbols themselves are rendered with the content property in an :after rule.
+                                    This means that the demo you see above is rendered largely using CSS. The symbols themselves are rendered with the content property in an :after selector.
                                     <br/><br/>
-                                    <a href = "http://www.github.com/prettymuchbryce/roguelikeboard">Learn more on github</a>
+                                    <a href = "http://www.github.com/prettymuchbryce/roguelikeboard">To learn more, visit github</a>
                                 </div>
                             </div>
                         </div>
