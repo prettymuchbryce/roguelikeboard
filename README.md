@@ -1,4 +1,4 @@
-[<img src="prettymuchbryce.s3.amazonaws.com/roguelikeboardlogo.png">](http://bryce.is/building/roguelikeboard)
+[<img src="http://prettymuchbryce.s3.amazonaws.com/rlblogo.png">](http://bryce.is/building/roguelikeboard)
 
 >roguelikeboard.jsx is a simple react.js component for rendering ASCII inspired roguelike boards on the web
 
