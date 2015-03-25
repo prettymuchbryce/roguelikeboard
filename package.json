@@ -1,13 +1,15 @@
 {
   "name": "roguelikeboard",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "A simple react.js component for rendering ASCII inspired roguelike boards on the web",
+  "main": "./index.js",
+  "author": {
+    "name": "Bryce Neal",
+    "email": "brycedneal@gmail.com",
+    "url": "http://bryce.is"
   },
-  "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "homepage": "http://www.bryce.is/building/roguelikeboard",
   "dependencies": {
     "react": "^0.13.0"
   },
