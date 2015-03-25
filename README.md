@@ -1,3 +1,78 @@
 roguelikeboard.jsx
 
-roguelikeboard.jsx is a simple react.js component for rendering ASCII inspired roguelike boards on the web
+>roguelikeboard.jsx is a simple react.js component for rendering ASCII inspired roguelike boards on the web
+
+####Installation
+First grab the source via `npm install roguelikeboard`, or download the project from github and snag `src/roguelikeboard.jsx`
+
+Next, include `roguelikeboard.jsx` into your project. It supports require.js, browserify, or no dependency management system. (i.e. React should be a global)
+
+####Usage
+
+###Setup
+In your parent component you should add the board to your `render()` method, and maintain a `ref` to it.
+```
+var RoguelikeBoard = require('roguelikeboard');
+
+render: function() {
+        return (
+            <RoguelikeBoard ref="roguelikeboard" />
+        )
+    }
+
+```
+
+###API
+There are a few different operations you can perform. Here they all are.
+- roguelikeboard.setViewportSize(widthInTiles, heightInTiles) `[required]`
+- roguelikeboard.setTileMap(2dArrayOfKeys) `[required]`
+- roguelikeboard.setCSSClassForTile(key, cssClassName)
+- roguelikeboard.setCSSClassForObject(key, cassClassName)
+- roguelikeboard.setObjects(array)
+- roguelikeboard.setCameraPosition(x, y)
+
+Before jumping into details, there are a couple of concepts to explain.
+
+####TileMaps vs Objects
+The tile map is the "level" of your board. It is the background. It is assumed to be a 2D array, e.g.
+```
+var map = [[0,0,0],
+           [0,1,0],
+           [0,0,0]];
+```
+Objects are the players, items, monsters, in your game. It is assumed to be an array with objects that contain an `x` `y` and `type` property.
+```
+var objects = [{x: 0, y: 0, type: 'player'}];
+```
+We could then call `setObjects(objects)`, and `setTileMap(map)` on our ref to render.
+
+####Symbols and colors
+To render symbols and colors we just use regular css. In order to do this we need to associate our tiles, and objects with css classes. We can do this with `setCSSClassForObject('player', 'symbol-player')` and `setCSSClassForTile(0, 'symbol-grass')`.
+
+Now we simply create some CSS to style these items.
+
+```
+.symbol-tree {
+    background-color: green;
+    color: green;
+}
+.symbol-tree:after {
+    content: " ";
+}
+.symbol-grass {
+    background-color: green;
+    color: #ffffff;
+}
+.symbol-grass:after {
+    content: "@";
+}
+```
+
+You can also style `.rb-renderer` with styles that should affect the entire board such as a font. Speaking of font, make sure you use a fixed-width font, or things will get pretty ugly. I've used `Courier New` in the example as it is a common fixed-width font included on most machines.
+
+####Running the demo
+```
+npm install
+make rundemo
+http://127.0.0.1:3006
+```
