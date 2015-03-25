@@ -7,21 +7,18 @@ First grab the source via `npm install roguelikeboard`, or download the project 
 
 Next, include `roguelikeboard.jsx` into your project. It supports require.js, browserify, or no dependency management system. (i.e. React should be a global)
 
-####Usage
-
 ###Setup
 In your parent component you should add the board to your `render()` method, and maintain a `ref` to it.
 ```
 var RoguelikeBoard = require('roguelikeboard');
-
-render: function() {
-        return (
-            <RoguelikeBoard ref="roguelikeboard" />
-        )
-    }
-
+React.createClass({
+        render: function() {
+                return (
+                    <RoguelikeBoard ref="roguelikeboard" />
+                )
+            }
+})
 ```
-
 ###API
 There are a few different operations you can perform. Here they all are.
 - roguelikeboard.setViewportSize(widthInTiles, heightInTiles) `[required]`
