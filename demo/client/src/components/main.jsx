@@ -45,9 +45,9 @@ var Main = React.createClass({
         self.refs.asciiRenderer.setObjects(objects);
         self.refs.asciiRenderer.setCameraPosition(player.x, player.y);
         this.refs.asciiRenderer.setObjects(objects);
-        self.refs.asciiRenderer.setViewportSize(Math.floor(window.innerWidth/30),10);
+        self.refs.asciiRenderer.setViewportSize(Math.floor(window.innerWidth/29),10);
         $(window).resize(function() {
-            self.refs.asciiRenderer.setViewportSize(Math.floor(window.innerWidth/30),10);
+            self.refs.asciiRenderer.setViewportSize(Math.floor(window.innerWidth/29),10);
         });
         this.refs.asciiRenderer.setCSSClassForObject('player', 'symbol-player');
         this.refs.asciiRenderer.setCSSClassForTile(0, 'symbol-tree');
@@ -65,20 +65,13 @@ var Main = React.createClass({
     render: function() {
         return (
             <div>
-                <div className="container">
-                    <div className="col-lg-12 text-center">
-                        <div className="title">roguelikeboard.jsx</div>
-                    </div>
-                </div>
                 <div>
-                    <div className="col-lg-12 text-center">
-                        <AsciiRenderer ref="asciiRenderer" />
-                    </div>
+                    <AsciiRenderer ref="asciiRenderer" />
                 </div>
                 <br/><br/>
                 <div className="container">
                     <div className="col-lg-12 text-center">
-                        <div className="col-lg-3"></div>
+                        <div className="col-lg-6"></div>
                         <div className="col-lg-6 info-container">
                             <div className="info-content">
                                 <div className="title">
@@ -95,7 +88,6 @@ var Main = React.createClass({
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-3"></div>
                     </div>
                 </div>
             </div>
