@@ -10,12 +10,19 @@ var Main = React.createClass({
             testMap.push([]);
             for (var x = 0; x < 200; x++) {
                 var dist = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,2,2,3,4];
-                testMap[y].push(dist[Math.floor(Math.random()*dist.length)]);
+                var tile;
+                if (y === 10) {
+                    tile = 1;
+                } else {
+                    tile = dist[Math.floor(Math.random()*dist.length)]
+                }
+                testMap[y].push(tile);
             }
         }
         var self = this;
-        var player = { type: 'player', x: 40, y: 10};
+        var player = { type: 'player', x: 0, y: 10};
         var objects = [player];
+        var lastMove; //always prefer previous move
         setInterval(function() {
             var isValidMove = function(position, player, map) {
                 var x = position.x + player.x;
@@ -31,17 +38,10 @@ var Main = React.createClass({
             }
 
             var moves = [{x: 1, y: 0}, {x: -1, y: 0}, {x: 0, y: 1}, {x:0, y: -1}];
-            moves = _.filter(moves, function(move) {
-                return isValidMove(move, player, testMap);
-            });
-
-            var move = _.sample(moves);
-
-            player.x += move.x;
-            player.y += move.y;
+            player.x++;
             self.refs.asciiRenderer.setObjects(objects);
             self.refs.asciiRenderer.setCameraPosition(player.x, player.y);
-        },300);
+        },100);
         self.refs.asciiRenderer.setObjects(objects);
         self.refs.asciiRenderer.setCameraPosition(player.x, player.y);
         this.refs.asciiRenderer.setObjects(objects);
@@ -75,7 +75,7 @@ var Main = React.createClass({
                         <div className="col-lg-6 info-container">
                             <div className="info-content">
                                 <div className="title">
-                                    What is roguelikeboard.jsx?
+                                    What is it?
                                 </div>
                                 <div className="body">
                                     roguelikeboard.jsx is a simple react.js component for rendering ASCII inspired <a href = "http://en.wikipedia.org/wiki/Roguelike">roguelike</a> boards on the web. 
